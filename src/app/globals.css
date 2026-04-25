@@ -1,0 +1,87 @@
+@import "tailwindcss";
+
+:root {
+  --background: #030305;
+  --foreground: #e4e4e7;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --font-sans: var(--font-geist-sans);
+  --font-mono: var(--font-geist-mono);
+}
+
+html {
+  /* Lenis handles scroll; keep auto for correct sync */
+  scroll-behavior: auto;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-geist-sans), system-ui, sans-serif;
+  overflow-x: hidden;
+}
+
+::selection {
+  background: rgba(6, 182, 212, 0.35);
+  color: #fafafa;
+}
+
+a {
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Subtle site-wide background (static + optional motion) */
+.site-bg-aurora {
+  background: linear-gradient(
+    125deg,
+    rgba(24, 24, 27, 0.5) 0%,
+    rgba(39, 39, 42, 0.35) 25%,
+    rgba(9, 9, 11, 0.4) 50%,
+    rgba(30, 27, 50, 0.25) 75%,
+    rgba(15, 23, 42, 0.3) 100%
+  );
+  background-size: 200% 200%;
+  background-position: 45% 45%;
+}
+
+.site-bg-orb {
+  opacity: 0.25;
+  will-change: transform, opacity;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  @keyframes site-bg-breathe {
+    0%,
+    100% {
+      opacity: 0.22;
+      transform: scale(1) translate(0, 0);
+    }
+    50% {
+      opacity: 0.32;
+      transform: scale(1.04) translate(1%, -1%);
+    }
+  }
+
+  @keyframes site-bg-drift {
+    0% {
+      background-position: 0% 40%;
+    }
+    50% {
+      background-position: 100% 60%;
+    }
+    100% {
+      background-position: 0% 40%;
+    }
+  }
+
+  .site-bg-aurora {
+    animation: site-bg-drift 32s ease-in-out infinite;
+  }
+
+  .site-bg-orb {
+    animation: site-bg-breathe 18s ease-in-out infinite;
+  }
+}

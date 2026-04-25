@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 32" role="img" aria-label="Accenture">
+  <path fill="#A100FF" d="M0 2 L8 10 L0 18V2z" />
+  <text
+    x="14"
+    y="20"
+    fill="#A100FF"
+    font-family="system-ui, -apple-system, sans-serif"
+    font-size="15"
+    font-weight="600"
+  >
+    accenture
+  </text>
+</svg>
