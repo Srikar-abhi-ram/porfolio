@@ -1,9 +1,7 @@
 "use client";
 
 import { useRef, useEffect, useState } from "react";
-import { PROFILE, HERO_CTA } from "@/lib/portfolio-data";
-
-const HERO_VIDEO_SRC = "/assets/herosection.mp4";
+import { PROFILE, HERO_CTA, HERO_VIDEO_URL } from "@/lib/portfolio-data";
 
 export function HeroSection() {
   const videoRef = useRef<HTMLVideoElement>(null);
@@ -64,7 +62,7 @@ export function HeroSection() {
             muted
             playsInline
             preload="auto"
-            src={HERO_VIDEO_SRC}
+            src={HERO_VIDEO_URL}
           />
           <div
             className="absolute inset-0 bg-gradient-to-l from-zinc-950/30 via-zinc-950/50 to-zinc-950/95"

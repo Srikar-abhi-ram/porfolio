@@ -24,6 +24,10 @@ export const HERO_CTA = {
   secondaryHref: "#contact",
 } as const;
 
+/** Hero background video (hosted — keeps the Git repo small) */
+export const HERO_VIDEO_URL =
+  "https://storage.googleapis.com/porfoliobkt/herosection.mp4" as const;
+
 export const ABOUT = {
   intro: [
     "Generative AI Engineer with 4+ years of experience building scalable AI-powered applications using Python, FastAPI, and Next.js.",
